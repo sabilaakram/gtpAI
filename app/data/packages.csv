@@ -1,0 +1,4 @@
+PackageID,PackageName,misc,refreshment,guide,imageURL,displayed
+s,standard,500,1000,1500,https://cdn-icons-png.flaticon.com/128/2454/2454282.png,economy
+m,medium,500,1000,1500,https://cdn-icons-png.flaticon.com/128/10217/10217199.png,comfort
+p,premium,8000,1000,1500,https://cdn-icons-png.flaticon.com/128/2953/2953363.png,premium
