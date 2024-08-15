@@ -1,0 +1,63 @@
+/* styles/global.css */
+.weather-widgets-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+}
+
+.weather-widget {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  max-width: 150px;
+  text-align: center;
+  background-color: #f9f9f9;
+  flex: 1 1 calc(50% - 32px); /* Adjust the width to 50% and leave space for the gap */
+  box-sizing: border-box;
+}
+
+.weather-widget .date {
+  font-weight: bold;
+}
+
+.weather-widget .icon {
+  font-size: 2rem;
+  margin: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-widget .temperature {
+  font-size: 1.25rem;
+}
+
+.weather-widget .min-temp {
+  color: #00f;
+}
+
+.weather-widget .max-temp {
+  color: #f00;
+}
+
+.condition {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 640px) {
+  .weather-widget {
+    flex: 1 1 calc(33.33% - 32px); /* 3 columns on larger screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .weather-widget {
+    flex: 1 1 calc(25% - 32px); /* 4 columns on even larger screens */
+  }
+}

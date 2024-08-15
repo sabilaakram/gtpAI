@@ -1,0 +1,113 @@
+/* MobileNavBarStyling.css */
+
+.mobile-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+}
+
+.mobile-navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-logo img {
+  height: 40px;
+}
+
+.hamburger-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  font-size: 2rem;
+}
+
+.close-icon {
+  font-size: 2rem;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.mobile-nav-links a {
+  padding: 0.75rem 0;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.mobile-nav-links a:hover {
+  color: #0070f3;
+}
+
+.dropdown {
+  position: relative;
+  padding: 0.75rem 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: auto; /* Allow width to be determined by content */
+  padding: 1rem 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap; /* Prevent wrapping and ensure content stays in one line */
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover > a {
+  color: #0070f3;
+}
+
+.arrow-down {
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #333;
+}
+
+.dropdown:hover .arrow-down {
+  border-top-color: #0070f3;
+}
+
+/* Hide on larger screens */
+@media (min-width: 992px) {
+  .mobile-navbar {
+    display: none;
+  }
+}

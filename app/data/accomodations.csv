@@ -1,0 +1,18 @@
+AccomodationID,AccomodationName,Location,Type,Description,PackageID,Amenities,Rating,DestinationID,RentPerNight
+a1,abc,good view,,,p,"wifi , pool , view",5,sk1,16000
+a2,abc,good view,,,p,"wifi , pool , view",4,sk1,16000
+a3,abc,good view,,,p,"wifi , pool , view",3,hu1,16000
+a4,abc,good view,,,p,"wifi , pool , view",5,na1,16000
+a5,abc,good view,,,p,"wifi , pool , view",4,sw1,16000
+a6,abc,good view,,,p,"wifi , pool , view",3,sk1,16000
+a7,abc,good view,,,m,"wifi , pool , view",3,hu1,16000
+a8,abc,good view,,,m,"wifi , pool , view",3,na1,16000
+a9,abc,good view,,,m,"wifi , pool , view",3,sw1,16000
+a10,abc,good view,,,m,"wifi , pool , view",3,sk1,16000
+a11,abc,good view,,,m,"wifi , pool , view",3,hu1,16000
+a12,abc,good view,,,s,"wifi , pool , view",3,na1,16000
+a13,abc,good view,,,s,"wifi , pool , view",3,sw1,16000
+a14,abc,good view,,,s,"wifi , pool , view",3,sk1,16000
+a15,abc,good view,,,s,"wifi , pool , view",3,hu1,16000
+a16,abc,good view,,,s,"wifi , pool , view",3,na1,16000
+a17,abc,good view,,,s,"wifi , pool , view",3,sw1,16000

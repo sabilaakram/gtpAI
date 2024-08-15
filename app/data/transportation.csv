@@ -1,0 +1,4 @@
+TransportationID,TransportationType,PackageID,DestinationID,PetrolPrice,AvgTravelPerDay,QuotedPerDayRateofCar,driver
+b1,bus,s,hu1,250,1.5,10000.1500
+c1,car,m,na1,250,1.5,8000,1500
+lc1,land cruiser,p,sk1,250,1.5,15000,1500

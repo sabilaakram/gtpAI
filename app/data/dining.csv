@@ -1,0 +1,21 @@
+DiningID,Resturant Name,Location,Cuisine,MealType,OpeningHours,Description,DestinationID,PackageID,PerMeal
+d1,hotel1,,pakistani,breakfast,10-12,,sk1,p,6000
+d2,hotel2,,,lunch,10-13,,sk1,p,6000
+d3,hotel3,,,dinnner,10-14,,sk1,p,6000
+d4,hotel4,,,dinner,10-15,,sk1,p,6000
+d5,hotel5,,,breakfast,10-16,,sk1,p,6000
+d6,hotel6,,,lunch,10-17,,sk1,p,6000
+d7,hotel7,,,dinnner,10-18,,sk1,p,6000
+d8,hotel8,,,breakfast,10-19,,sk1,p,6000
+d9,hotel9,,,lunch,10-20,,sk1,p,6000
+d10,hotel10,,,dinnner,10-21,,na1,m,6000
+d11,hotel11,,,breakfast,10-22,,na1,m,6000
+d12,hotel12,,,lunch,10-23,,na1,m,6000
+d13,hotel13,,,dinnner,10-24,,na1,m,6000
+d14,hotel14,,,breakfast,10-25,,na1,m,6000
+d15,hotel15,,,lunch,10-26,,na1,m,6000
+d16,hotel16,,,dinnner,10-27,,na1,m,6000
+d17,hotel17,,,breakfast,10-28,,hu1,m,6000
+d18,hotel18,,,lunch,10-29,,hu1,m,6000
+d19,hotel19,,,dinnner,10-30,,hu1,s,6000
+d20,hotel20,,,lunch,10-31,,hu1,s,6000

@@ -1,0 +1,10 @@
+routeID,pickup,destination,destinationID,option,attraction,staytime,hotel,food
+r1,islamabad,skardu,sk1,naran,mansehra^ kiwai waterfall^ naran zipline^ kunhar river rafting^ babusar top^ lulusar lake^ 3 mountain junction point,1,mount feast hotel-naran,none
+r2,islamabad,skardu,sk1,chillas,three mountain junction^ indus gilgit rivers,1,indus lodges-chillas,none
+r3,islamabad,naran,na1,hazara motorway,mansehra^kiwai waterfall^shogran^siripaye^kaghan valley,1,pine cegar-wood hotel and resort,balakot shop^pine park hotel and resort
+r4,islamabad,kashmir,k1,kutton hazara motorway N15,"mansehra^lughmani hill^muzaffarabad^jabbar waterfall^danni waterfall^kutton, red fort",1,jagran resort,none
+r5,islamabad,hunza,hu1,hazara motorway,mansehraa^kiwai waterfall^naran^luluzar lake^babusar top,1,rose valley hotel,none
+r6,islamabad,kumrat,ku1,swat motorway,bab-e-kumrat^thal(in jeeps),1,none,none
+r7,islamabad,sharan forest,sf1,hazara motorway,mansehra^kaghan^paras bazar^balakot,1,none,none
+r8,islamabad,swat and kashmir,ks1,malam jabba,treeking^ziplining^ski resort,1,pc-malam jabba,none
+r9,islamabad,swat,sw1,swat motorway,bab-e-kumrat^thal(in jeeps),1,none,none

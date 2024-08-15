@@ -1,0 +1,616 @@
+/* formStyles.css */
+
+pre {
+  text-wrap: wrap;
+}
+
+.select-field {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+.select-field:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+fieldset {
+  margin-top: 1rem;
+}
+
+.legend {
+  font-weight: 600;
+}
+
+.radio-group {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.radio-input {
+  height: 1rem; /* Slightly larger for better visibility */
+  width: 1rem; /* Slightly larger for better visibility */
+  color: #3b82f6;
+  border-color: #d1d5db;
+  accent-color: #3b82f6; /* Modern approach to color radio button */
+}
+
+.radio-label {
+  margin-left: 0.5rem;
+  color: #4b5563;
+  font-size: 1.2rem; /* Increased font size */
+}
+
+.radio-input:checked {
+  background-color: #3b82f6; /* Color when checked */
+  border-color: #3b82f6; /* Border color when checked */
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.input-label {
+  margin-right: 10px;
+  font-size: 16px;
+  width: 70px; /* Set a consistent width for the labels */
+}
+
+.input-controls {
+  display: flex;
+  align-items: center;
+}
+
+.input-controls button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  background-color: #a2a1a1;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 5px; /* Add margin for spacing between elements */
+}
+
+.input-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.input-number {
+  min-width: 30px; /* Ensure consistent width for the number display */
+  text-align: center;
+  font-size: 18px;
+}
+
+.input-field {
+  width: 4rem;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0; /* Adjust if necessary */
+  padding: 0; /* Remove padding if there’s any */
+  text-align: center;
+}
+
+.spinner {
+  margin-bottom: 10px;
+}
+
+.loading-text {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  font-family: "Arial", sans-serif;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.header-line {
+  font-family: "Arial", sans-serif;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 20px;
+}
+
+.select-field {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.fieldset {
+  margin: 20px 0;
+  border: none;
+}
+
+.legend {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio-item {
+  flex: 1;
+  text-align: center;
+}
+
+.radio-item input {
+  margin-right: 10px;
+}
+
+.destination-selector {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.destination-item {
+  cursor: pointer;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  transition: border-color 0.3s, background-color 0.3s, transform 0.3s;
+  overflow: hidden; /* Ensure content doesn't overflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+}
+
+.destination-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Slightly darker background */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.destination-item.selected {
+  border-color: #007bff;
+  background-color: rgba(
+    0,
+    123,
+    255,
+    0.1
+  ); /* Light blue background for selected state */
+}
+
+.destination-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.destination-item p {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 992px) {
+  .destination-item img {
+    min-height: 200px;
+  }
+}
+
+/**********/
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Space the buttons apart */
+  align-items: center; /* Center align buttons vertically if they have different heights */
+  margin-top: 20px; /* Add some margin above the button group */
+}
+
+.next-button {
+  display: block;
+  margin-left: auto;
+  margin-right: 4%;
+  margin-top: 20px;
+  background-color: #26a3b9; /* Teal color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px; /* Rounded corners */
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.next-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.next-button:not(:disabled):hover {
+  background-color: #1a8791;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-button {
+  display: block;
+  margin-right: auto;
+  margin-left: 4%;
+  margin-top: 20px;
+  background-color: #26a3b9; /* Teal color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px; /* Rounded corners */
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.regen-button {
+  display: block;
+  margin: 20px auto; /* Centers the button and adds top margin */
+  background-color: #26a3b9; /* Teal color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px; /* Rounded corners */
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/*********************/
+
+/* styles/ProgressBar.module.css */
+.progress-bar {
+  height: 100%;
+  background-color: #76c7c0;
+  transition: width 0.5s ease;
+}
+
+/*******Calendar*******/
+
+/* Base Styles */
+.date-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.date-group {
+  flex: 1;
+  min-width: 250px; /* Ensure a minimum width for each date picker */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-label {
+  display: block;
+  color: #4b5563;
+  font-size: large;
+  margin-bottom: 0.5rem;
+}
+
+.large-calendar .react-datepicker__month-container {
+  font-size: 1.2em;
+}
+
+.large-calendar .react-datepicker__day-name,
+.large-calendar .react-datepicker__day,
+.large-calendar .react-datepicker__time-name {
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+  font-size: 1.2em;
+}
+
+.large-calendar .react-datepicker__navigation {
+  top: 1.5em;
+  width: 2em;
+  height: 2em;
+}
+
+.large-calendar .react-datepicker__navigation-icon {
+  font-size: 1.5em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .date-container {
+    flex-direction: column; /* Stack date pickers vertically on small screens */
+  }
+
+  .large-calendar .react-datepicker__month-container {
+    font-size: 1em; /* Adjust font size for smaller screens */
+  }
+
+  .large-calendar .react-datepicker__day-name,
+  .large-calendar .react-datepicker__day,
+  .large-calendar .react-datepicker__time-name {
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    font-size: 1em;
+  }
+
+  .large-calendar .react-datepicker__navigation {
+    top: 1em;
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  .large-calendar .react-datepicker__navigation-icon {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .large-calendar .react-datepicker__month-container {
+    font-size: 1.1em; /* Slightly smaller font size for tablets */
+  }
+
+  .large-calendar .react-datepicker__day-name,
+  .large-calendar .react-datepicker__day,
+  .large-calendar .react-datepicker__time-name {
+    width: 2.8em;
+    height: 2.8em;
+    line-height: 2.8em;
+    font-size: 1.1em;
+  }
+
+  .large-calendar .react-datepicker__navigation {
+    top: 1.3em;
+    width: 1.8em;
+    height: 1.8em;
+  }
+
+  .large-calendar .react-datepicker__navigation-icon {
+    font-size: 1.4em;
+  }
+}
+
+/*******/
+.package-selection {
+  display: flex;
+  gap: 1em;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.package-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 300px; /* Adjust the width to make it rectangular */
+  height: 120px; /* Adjust the height to make it rectangular */
+  border: 2px solid #ddd;
+  border-radius: 4px; /* Reduce the border radius */
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.package-option.selected {
+  border-color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.package-option img {
+  width: 50px; /* Increase the size of the icons */
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .package-selection {
+    flex-wrap: wrap;
+  }
+}
+
+.package-option span {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.package-option:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+/***********************************/
+.mainContainer {
+  display: flex;
+  width: 100%;
+  height: 100%; /* Let the content determine the height */
+  box-sizing: border-box;
+}
+
+.leftSide {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.rightSide {
+  width: 50%;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1024px) {
+  .leftSide {
+    width: 100%;
+    padding: 0px;
+  }
+  .rightSide {
+    min-height: 350px;
+    width: 100%;
+  }
+
+  .mainContainer {
+    flex-direction: column;
+  }
+}
+
+.overviewContainer {
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.attractionsContainer {
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .attractionsContainer {
+    padding: 0px;
+  }
+}
+
+/**************/
+.scrollWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scrollContainer {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 0;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  position: relative;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.scrollButton {
+  position: absolute;
+  background-color: #1a8dcc;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  z-index: 1; /* Ensure buttons are above other content */
+}
+
+.scrollButton.left {
+  left: 10px; /* Adjust as needed */
+}
+
+.scrollButton.right {
+  right: 10px; /* Adjust as needed */
+}
+
+.scrollButton:hover {
+  background-color: #1678b3;
+}
+
+.arrowIcon {
+  color: white;
+  font-size: 16px;
+}
+
+.attraction {
+  cursor: pointer;
+  flex: 0 0 auto;
+  margin: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 8px;
+  z-index: 0; /* Make sure content is below buttons */
+}
+
+.attraction:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+  border-radius: 8px;
+  display: block; /* Ensures the image doesn't overlap the button area */
+}
+
+.weather-widgets-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+/***********/
+.paddingAttraction {
+  padding: 0px;
+}
+@media screen and (max-width: 1024px) {
+  .paddingAttraction {
+    padding: 20px 20px 0px;
+  }
+}

@@ -1,0 +1,45 @@
+AttractionName,AttractionID,DestinationID,Duration,TicketPrice,Latitude,Longitude,ImageURL
+Deosai National Park,dnp1,sk1,2,1000,35.0189,75.4144,https://elands.pk/storage/2023/02/Deosai-National-Park.jpg
+Sheosar Lake,sk1,sk1,3,1000,34.991,75.237,https://www.travelertrails.com/wp-content/uploads/2023/03/Sheosar-Lake-2.jpg
+Shangrila Resort (Lower Kachura Lake),sr1,sk1,4,1000,35.4267,75.455,https://flypakistan.pk/assets/img/attractions/Shangrila%20Resort%20Skardu.jpeg
+Upper Kachura Lake,ukl1,sk1,5,1000,35.4467,75.4454,https://pyaraskardu.com/wp-content/uploads/2022/12/1280px-Upper_kachura_lake_skardu_baltistan-960x576.jpg
+Satpara Lake,sl1,sk1,2,1000,35.2288,75.631,https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieiW67SZrkKeLTzZIjCSYiJ8UIBtZu16ujc7NCWMJZlXFThI17ApCmaIslwtRLUW4SfQFtiojSzdJf2gbsSHXqjO7cBhIcrhrPJYD9zdZW1cpjY4PCDz-WOcX5oouiJ1_ewny7SnKFNW8/s1600/Satpara-Lake.jpg
+Shigar Fort,sf1,sk1,6,1000,35.4231,75.7422,https://static.the.akdn/53832/1641715114-shigar_fort-56759_0.jpg
+Kharpocho Fort,kf1,sk1,3,1000,35.3015,75.6167,https://upload.wikimedia.org/wikipedia/commons/1/12/Kharpocho_Fort_Skardu.jpg
+Katpana Desert (Cold Desert),kd01,sk1,2,1000,35.3086,75.6343,https://upload.wikimedia.org/wikipedia/commons/f/f8/Unexpected_Snow_in_Katpana_Skardu.jpg
+Manthokha Waterfall,mw01,sk1,1,1000,35.2931,75.6876,https://res.cloudinary.com/www-travelpakistani-com/image/upload/v1617894191/landmark_images/tkyvzk5p1g6xm9ktpso1.webp
+Basho Valley,bw01,sk1,4,1000,35.3419,75.5202,https://miro.medium.com/v2/resize:fit:1358/1*-E_XpxeLNOy9lDWWAk5hng.jpeg
+Skardu Bazaar,sb1,sk1,2,1000,35.2985,75.6335,https://flypakistan.pk/assets/img/toc-image/hunza%20bazzar.jpg
+Rama Lake,rlo1,sk1,3,1000,35.2912,74.8462,https://www.travelertrails.com/wp-content/uploads/2023/01/Rama-Lake-2.jpg
+Chaqchan Mosque,cm01,sk1,5,1000,35.3138,76.3402,https://upload.wikimedia.org/wikipedia/commons/6/68/Side_view_of_Chaqchan_Mosque.jpg
+K2 Base Camp,k2bc,sk1,3,1000,35.748,76.5133,https://www.alpineascents.com/wp-content/uploads/2022/04/k2-2.jpg
+Hussainabad Valley,hv01,sk1,2,1000,35.3887,75.5586,https://miro.medium.com/v2/resize:fit:1400/0*omnTmA3RXGpqUpNf.jpg
+Baltit Fort,bf001,hu1,1,1000,36.3168,74.6683,https://pyaraskardu.com/wp-content/uploads/2023/01/Hunza-Karimabad-Baltit-Fort-6-960x576.jpg
+Altit Fort,af001,hu1,3,1000,36.3123,74.6581,https://live.staticflickr.com/8503/8264259786_83f368c819_c.jpg
+Rakaposhi View Point,rvp01,hu1,3,1000,36.2036,74.6392,https://www.youlinmagazine.com/articles/2385.jpg
+Attabad Lake,al01,hu1,4,1000,36.3277,74.8732,https://visitgilgitbaltistan.gov.pk/images/articles/places/Image2023-06-271687859681.jpg
+Passu Cones,pc01,hu1,5,1000,36.4935,74.89,https://urbanduniya.com/wp-content/uploads/13600284_10154274948416119_2114171534548558237_n.jpg
+Hussaini Suspension Bridge,hsb01,hu1,1,1000,36.4615,74.8322,https://gulmitcontinentalhotel.com/wp-content/uploads/2023/06/bridge-1.jpg
+Khunjerab Pass,kp01,hu1,2,1000,36.85,75.4286,https://profit.pakistantoday.com.pk/wp-content/uploads/2021/03/Pakistan_China_Border_at_khunjerab_Pass.jpg
+Eagle’s Nest,en01,hu1,2,1000,36.3489,74.6484,https://flypakistan.pk/hotels/imgs/Hunza/Eagle%20Nest%20Hunza/eagle-nest-hunza-img12-264406528_4801546903201918_6310788360349515858_n.jpg
+Karimabad,k001,hu1,2,1000,36.3168,74.6702,https://res.cloudinary.com/www-travelpakistani-com/image/upload/v1667925204/karimabad_bazar_travelpakistani.jpg
+Shimshal Valley,sv02,hu1,3,1000,36.4822,75.3503,https://kamranonbike.com/wp-content/uploads/2021/01/001DJI_0224-Edit-pichi.jpg
+Lake Saif-ul-Malook,lsum01,na1,2,1000,34.907,73.6973,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdcjyrpmZXq8eEPegZHYrNwwsI4hULUgFoig&s
+Ansoo Lake,al02,na1,3,1000,35.3502,72.565,https://www.getout.pk/pakistan/wp-content/uploads/2019/06/Ansoo_Lake.jpg
+Lulusar Lake,ll02,na1,2,1000,35.1976,72.5297,https://res.cloudinary.com/www-travelpakistani-com/image/upload/v1653911859/External%20Links/Lulusar_Lake_travelpakistani.jpg
+Babusar Pass,bp02,na1,3,1000,35.2681,74.0481,https://humenglish.com/wp-content/uploads/2024/06/Babusar.jpg
+Lalazar Meadows,lm01,na1,2,1000,34.9542,73.8922,https://www.getout.pk/pakistan/wp-content/uploads/2019/07/Lalazar-Meadows-875x500.jpg
+Dudipatsar Lake,dl01,na1,3,1000,35.105,74.0583,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvnnYeqYbndKcdslNmIu3RMdw0_DBDwQc3Gg&s
+Noori Top,nt01,na1,2,1000,35.1917,74.0575,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHkdIv0Sq8GQH2bNJNjSrVFmzIsLbWOEgF3A&s
+Batakundi,b001,na1,3,1000,35.1228,74.0181,https://live.staticflickr.com/1714/24520405392_c4fa9f617c_b.jpg
+Naran Bazar,nb012,na1,3,1000,34.9117,73.8314,https://pakrism.pk/wp-content/uploads/2023/04/naran-kaghan-1.jpg
+Mingora,m001,sw1,2,1000,34.7758,72.3614,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmdeiKtEjrJ6xOEVAZXUHy6Hp4Cct7OoHePg&s
+Saidu Sharif,ss01,sw1,3,1000,34.7464,72.3528,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKq2HjVw5Rlpf0s27xro7t-oaSFFvfu3y_YA&s
+Malam Jabba,mj01,sw1,2,1000,34.8022,72.5708,https://media-cdn.tripadvisor.com/media/photo-s/1a/b9/bc/37/malam-jabba.jpg
+Kalam,k001,sw1,3,1000,35.4942,72.5864,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9BIm-FrdkbD8ScUgCSqS_ziGcYOk0zHiQgQ&s
+Mahodand Lake,ml02,sw1,2,1000,35.7153,72.5767,https://www.ajktours.com/wp-content/uploads/2023/12/10-Days-trip-to-Shogran-Swat-Valley-Kalam-Kashmir-Holiday-Travel-Tour-Package-1.jpg
+Ushu Forest,uf01,sw1,3,1000,35.3528,72.5706,https://www.ajktours.com/wp-content/uploads/2023/11/53-1.jpg
+Madyan,m003,sw1,2,1000,35.1056,72.5369,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD2MTcQrj9UXQVcXkf6znaUWUYvFKNXDSlFw&s
+Fizagat Park,fp01,sw1,2,1000,34.7903,72.3539,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOV4sMo5LTk0TSTWz9SvEb_zwDnkZ9cgSihw&s
+Gabral Valley,gv002,sw1,2,1000,35.5097,72.5725,https://prestinetravels.com/wp-content/uploads/2023/05/gabral-valley-swat5.jpg
+Kundol Lake,kl02,sw1,2,1000,35.5761,72.5672,https://prestinetravels.com/wp-content/uploads/2023/05/kundol-lake-swat5.jpg

@@ -1,0 +1,93 @@
+/* components/NavBar.css */
+
+.navbar {
+  /* position: fixed !important; Make the navbar fixed */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Make it span the full width of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%; /* Adjust the width as needed */
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.nav-links a:hover {
+  color: #0070f3;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: auto; /* Allow width to be determined by content */
+  padding: 1rem 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap; /* Prevent wrapping and ensure content stays in one line */
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover > a {
+  color: #0070f3;
+}
+
+.arrow-down {
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #333;
+}
+
+.dropdown:hover .arrow-down {
+  border-top-color: #0070f3;
+}
