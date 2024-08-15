@@ -282,6 +282,21 @@ const Destinationform = ({
     setAttractions(response.names);
     setAttImages(response.Imageurls);
     setLoading(false);
+
+    let emailString = "";
+    emailString =
+      "**Contact Info:**\n" +
+      fullName +
+      "\n" +
+      email +
+      "\n" +
+      phoneNumber +
+      "\n\n" +
+      "**Generated Itinerary:**\n" +
+      response.text;
+    console.log(emailString);
+    await sendEmail(emailString);
+
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -330,14 +345,89 @@ const Destinationform = ({
   }, [attractions]);
   /**********/
 
+  /*****Personal Info*******/
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const handlePhoneNumberChange = (e: any) => {
+    let input = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+
+    if (input.length > 4) {
+      input = input.slice(0, 4) + "-" + input.slice(4, 11);
+    }
+
+    setPhoneNumber(input);
+  };
+
+  const isInfoValid = () => {
+    const phoneRegex = /^03\d{2}-\d{7}$/;
+    return fullName && email && phoneRegex.test(phoneNumber);
+  };
+  /*********************/
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         {pageCount === 0 && (
           <>
-            <MyProgressBar progress={33} />
+            <MyProgressBar progress={25} />
             <h2 className="text-[#2c3e50] text-center sm:text-mdfont text-base">
-              Step 1: Travel Details
+              Step 1: Personal Information
+            </h2>
+            <p className="text-[#2c3e50] text-center sm:text-xl text-sm">
+              Please provide your contact details to help us tailor your trip
+              itinerary.
+            </p>
+            <h4>Full Name</h4>
+
+            <input
+              type="text"
+              placeholder="Enter your full name"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              className="select-field"
+            />
+
+            <h4>Email Address</h4>
+
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="select-field"
+            />
+
+            <h4>Phone Number</h4>
+
+            <input
+              type="text"
+              placeholder="03XX-XXXXXXX"
+              value={phoneNumber}
+              onChange={handlePhoneNumberChange}
+              className="select-field"
+              maxLength={12}
+            />
+
+            <button
+              className="next-button"
+              onClick={() => {
+                setPageCount(pageCount + 1);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              type="button"
+              disabled={!isInfoValid()}
+            >
+              Next
+            </button>
+          </>
+        )}
+        {pageCount === 1 && (
+          <>
+            <MyProgressBar progress={50} />
+            <h2 className="text-[#2c3e50] text-center sm:text-mdfont text-base">
+              Step 2: Travel Details
             </h2>
             <p className="text-[#2c3e50] text-center sm:text-xl text-sm">
               Provide us with your travel specifics so we can create a
@@ -446,29 +536,40 @@ const Destinationform = ({
               </div>
             )}
 
-            <button
-              className="next-button"
-              onClick={() => {
-                setPageCount(pageCount + 1);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              disabled={
-                !selectedDestination ||
-                !selectedPickup ||
-                (selectedTransport === "car" && !selectedRoute)
-              }
-              type="button"
-            >
-              Next
-            </button>
+            <div className="button-container">
+              <Button
+                className="back-button"
+                onClick={() => {
+                  setPageCount(pageCount - 1);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                type="button"
+              >
+                Back
+              </Button>
+              <Button
+                className="next-button"
+                onClick={() => {
+                  setPageCount(pageCount + 1);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                type="button"
+                disabled={
+                  !selectedDestination ||
+                  !selectedPickup ||
+                  (selectedTransport === "car" && !selectedRoute)
+                }
+              >
+                Next
+              </Button>
+            </div>
           </>
         )}
-
-        {pageCount === 1 && (
+        {pageCount === 2 && (
           <>
-            <MyProgressBar progress={67} />
+            <MyProgressBar progress={75} />
             <h2 className="text-[#2c3e50] text-center sm:text-mdfont text-base">
-              Step 2: When are you travelling?
+              Step 3: When are you travelling?
             </h2>
             <p className="text-[#2c3e50] text-center sm:text-xl text-sm">
               Choose the dates for your trip to help us create an accurate
@@ -526,12 +627,11 @@ const Destinationform = ({
             </div>
           </>
         )}
-
-        {pageCount === 2 && (
+        {pageCount === 3 && (
           <>
             <MyProgressBar progress={100} />
             <h2 className="text-[#2c3e50] text-center sm:text-mdfont text-base">
-              Step 3: Choose Your Plan
+              Step 4: Choose Your Plan
             </h2>
             <p className="text-[#2c3e50] text-center sm:text-xl text-sm">
               Provide us with your travel specifics so we can create a
@@ -632,7 +732,7 @@ const Destinationform = ({
         )}
       </form>
 
-      {loading && pageCount === 3 && (
+      {loading && pageCount === 4 && (
         <div
           style={{
             display: "flex",
@@ -663,7 +763,7 @@ const Destinationform = ({
         weatherData &&
         textStrings &&
         xlData &&
-        pageCount === 3 && (
+        pageCount === 4 && (
           <>
             <h2 className="header">Here&apos;s Your Itinerary!</h2>
             <br></br>
