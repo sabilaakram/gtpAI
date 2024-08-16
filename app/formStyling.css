@@ -536,6 +536,7 @@ fieldset {
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
   position: relative;
+  align-items: flex-start; /* Align items at the top of the container */
 }
 
 .scrollContainer::-webkit-scrollbar {
@@ -595,7 +596,10 @@ fieldset {
 
 .image {
   border-radius: 8px;
-  display: block; /* Ensures the image doesn't overlap the button area */
+  display: block;
+  width: 100%; /* Ensure it takes up the width of the container */
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Maintain aspect ratio */
 }
 
 .weather-widgets-container {

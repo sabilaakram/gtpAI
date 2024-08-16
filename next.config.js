@@ -32,6 +32,36 @@ const nextConfig = {
         hostname: "guidetopakistan.pk",
         pathname: "/wp-content/uploads/elementor/**/*", // Adjust if needed
       },
+      {
+        protocol: "https",
+        hostname: "guidetopakistan.pk",
+        pathname: "/wp-content/uploads/2021/05/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.youlinmagazine.com",
+        pathname: "/articles/**",
+      },
+      {
+        protocol: "https",
+        hostname: "urbanduniya.com",
+        pathname: "/wp-content/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.getout.pk",
+        pathname: "/pakistan/wp-content/uploads/2019/06/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.getout.pk",
+        pathname: "/pakistan/wp-content/uploads/2019/07/**",
+      },
 
       {
         protocol: "https",
@@ -41,17 +71,43 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "www.travelertrails.com",
-        pathname: "/wp-content/uploads/2023/03/**/*",
+        pathname: "/wp-content/uploads/2023/03/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.travelertrails.com",
+        pathname: "/wp-content/uploads/2023/01/**",
       },
       {
         protocol: "https",
         hostname: "flypakistan.pk",
-        pathname: "/assets/img/attractions/**/*",
+        pathname: "/assets/img/attractions/**",
+      },
+      {
+        protocol: "https",
+        hostname: "flypakistan.pk",
+        pathname: "/assets/img/City/**",
+      },
+
+      {
+        protocol: "https",
+        hostname: "flypakistan.pk",
+        pathname: "/assets/img/toc-image/**",
+      },
+      {
+        protocol: "https",
+        hostname: "flypakistan.pk",
+        pathname: "/hotels/imgs/Hunza/**",
       },
       {
         protocol: "https",
         hostname: "pyaraskardu.com",
-        pathname: "/wp-content/uploads/2022/12/**/*",
+        pathname: "/wp-content/uploads/2022/12/**",
+      },
+      {
+        protocol: "https",
+        hostname: "pyaraskardu.com",
+        pathname: "/wp-content/uploads/2023/01/**",
       },
       {
         protocol: "https",
@@ -68,6 +124,7 @@ const nextConfig = {
         hostname: "upload.wikimedia.org",
         pathname: "/wikipedia/commons/**/*",
       },
+
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
@@ -81,7 +138,17 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "live.staticflickr.com",
-        pathname: "/8503/8264259786_83f368c819_c.jpg",
+        pathname: "/1714/*",
+      },
+      {
+        protocol: "https",
+        hostname: "live.staticflickr.com",
+        pathname: "/41/*",
+      },
+      {
+        protocol: "https",
+        hostname: "live.staticflickr.com",
+        pathname: "/8503/*",
       },
       {
         protocol: "https",
@@ -110,13 +177,38 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "prestinetravels.com",
+        pathname: "/wp-content/uploads/2021/05/**",
+      },
+      {
+        protocol: "https",
         hostname: "pakrism.pk",
         pathname: "/wp-content/uploads/2023/04/**/*",
       },
       {
         protocol: "https",
-        hostname: "ajktours.com",
-        pathname: "/wp-content/uploads/2023/**/*",
+        hostname: "www.ajktours.com",
+        pathname: "/wp-content/uploads/2023/12/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.ajktours.com",
+        pathname: "/wp-content/uploads/2023/11/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.pchotels.com",
+        pathname: "/uploads/images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "pak-adventure.com",
+        pathname: "/wp-content/uploads/2019/01/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.travelertrails.com",
+        pathname: "/wp-content/uploads/2022/11/**",
       },
       {
         protocol: "https",
@@ -132,6 +224,21 @@ const nextConfig = {
         protocol: "https",
         hostname: "visitgilgitbaltistan.gov.pk",
         pathname: "/images/articles/places/**/*",
+      },
+      {
+        protocol: "https",
+        hostname: "miro.medium.com",
+        pathname: "/v2/resize:fit:1358/**",
+      },
+      {
+        protocol: "https",
+        hostname: "miro.medium.com",
+        pathname: "/v2/resize:fit:1400/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.alpineascents.com",
+        pathname: "/wp-content/uploads/2022/04/**",
       },
     ],
   },

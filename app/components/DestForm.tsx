@@ -197,8 +197,6 @@ const Destinationform = ({
   const [loading, setLoading] = useState<boolean>(false); //For loading animation
   const [pageCount, setPageCount] = useState<number>(0);
 
-  // const [startDate, setStartDate] = useState<string>("");
-  // const [endDate, setEndDate] = useState<string>("");
   const [selectedPickup, setSelectedPickup] = useState("");
   const [selectedTransport, setSelectedTransport] = useState("car"); // default is "car"
   const [selectedDestination, setSelectedDestination] = useState("");
@@ -329,7 +327,8 @@ const Destinationform = ({
       setCanScrollLeft(container.scrollLeft > 0);
       setCanScrollRight(
         container.scrollWidth > container.clientWidth &&
-          container.scrollLeft < container.scrollWidth - container.clientWidth
+          container.scrollLeft <
+            container.scrollWidth - container.clientWidth - 1
       );
     }
   };
@@ -338,11 +337,12 @@ const Destinationform = ({
     updateScrollButtons();
     window.addEventListener("resize", updateScrollButtons);
     return () => window.removeEventListener("resize", updateScrollButtons);
-  }, []);
+  }, [attractions]); // Add attractions as a dependency to recheck on changes
 
   useEffect(() => {
     updateScrollButtons();
-  }, [attractions]);
+  }, []);
+
   /**********/
 
   /*****Personal Info*******/
@@ -802,25 +802,30 @@ const Destinationform = ({
                       ref={scrollContainerRef}
                       onScroll={updateScrollButtons}
                     >
-                      {attractions.map((attraction, index) => (
-                        <div
-                          key={index}
-                          className="attraction"
-                          onClick={() =>
-                            window.open("https://guidetopakistan.pk/", "_blank")
-                          }
-                        >
-                          <Image
-                            src="https://www.visitswatvalley.com/images/visit-lake-in-swat.jpg"
-                            alt={attraction}
-                            width={300}
-                            height={200}
-                            className="image"
-                          />
-                          <p>{attraction}</p>
-                        </div>
-                      ))}
+                      {attImages &&
+                        attractions.map((attraction, index) => (
+                          <div
+                            key={index}
+                            className="attraction"
+                            onClick={() =>
+                              window.open(
+                                "https://guidetopakistan.pk/",
+                                "_blank"
+                              )
+                            }
+                          >
+                            <Image
+                              src={attImages[index]}
+                              alt={attraction}
+                              width={300}
+                              height={200}
+                              className="image"
+                            />
+                            <p>{attraction}</p>
+                          </div>
+                        ))}
                     </div>
+
                     {canScrollRight && (
                       <button
                         className="scrollButton right"
