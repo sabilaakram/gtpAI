@@ -24,6 +24,7 @@ export async function generateItenary(formdata: FormData) {
   const adults = formdata.get("adults");
   const package_id = formdata.get("Packages");
   const route_id = formdata.get("Route");
+  const transport_means = formdata.get("transport");
   console.log(formdata);
 
   let days = 1;
@@ -218,6 +219,7 @@ export async function generateItenary(formdata: FormData) {
     - Total Number of Adults: ${adults}
     - Total Time Period: ${days} days
     - Total children under 3: ${children}
+    - Travel: By ${transport_means}
     Please provide a day-by-day itinerary with recommendations on places to visit, where to eat, and how to get around. donot mention the costs to the user.  Also, include the itinerary mentioning hours.
     donot mention any kind of cost detail to user. i dont want user to know any cost.
     The response should have seperate sections for overview, each day and one section for Excel format. Seperate each section with a line of "----------" 10 dashes. Do not include anything else`;
