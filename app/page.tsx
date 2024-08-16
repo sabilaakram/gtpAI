@@ -14,6 +14,10 @@ import WeatherWidget from "./components/WeatherWidget";
 import GuessTheNumber from "./components/GuessTheNumber";
 
 export default async function Home() {
+  let itinerary_id = parseInt(
+    await fs.readFile("app/data/itineraryID.txt", "utf8")
+  );
+
   const destination_file = await fs.readFile(
     "app/data/destinations.csv",
     "utf8"
@@ -52,6 +56,7 @@ export default async function Home() {
           destinationData={mydestinations}
           packageData={mypackages}
           routeData={myroutes}
+          itineraryNumber={itinerary_id}
         ></DestForm>
         <br></br>
       </main>

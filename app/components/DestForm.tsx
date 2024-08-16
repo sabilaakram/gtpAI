@@ -53,6 +53,19 @@ function filterLines(inputString: string, startChar: string) {
     .filter((line) => line.startsWith(startChar)) // Filter lines that start with the specified character
     .join("\n"); // Join the remaining lines back into a single string
 }
+/***************/
+function removeExcel(itinerary: string): string {
+  const lines = itinerary.split("\n");
+  let ex = 0;
+  lines.forEach((line, index) => {
+    if (line.startsWith("----------")) {
+      ex = index;
+    }
+  });
+  const noexcel = lines.slice(0, ex).join("\n");
+  return noexcel;
+}
+/***************/
 
 function formatDateFrontEnd(date: Date): string {
   const options: Intl.DateTimeFormatOptions = {
@@ -179,13 +192,16 @@ const Destinationform = ({
   destinationData,
   packageData,
   routeData,
+  itineraryNumber,
 }: {
   destinationData: string[][];
   packageData: string[][];
   routeData: string[][];
+  itineraryNumber: number;
 }) => {
   const [result, setResult] = useState<string | null>(null);
   const [routeResponse, setRouteResponse] = useState<string>("");
+  const [salesResponse, setSalesResponse] = useState<string>("");
   const [xlData, setXlData] = useState<string | null>(null);
   const [weatherData, setWeatherData] = useState<string | null>(null);
   const [textStrings, setTextStrings] = useState<string[] | null>(null);
@@ -264,12 +280,13 @@ const Destinationform = ({
     formData1.append("trip-end", `${formatDateToYYYYMMDD(endDate)}`);
 
     // Call generateItenary and handle the response
-    const response = await generateItenary(formData1);
+    const ItId = itineraryNumber + 1;
+    const response = await generateItenary(formData1, ItId);
     const excelData = filterLines(
       response.text_strings[response.text_strings.length - 1],
       "|"
     );
-
+    setSalesResponse(response.sales_text);
     setResult(response.text);
     setRouteResponse(response.routeText);
     setXlData(excelData);
@@ -283,26 +300,49 @@ const Destinationform = ({
 
     let emailString = "";
     emailString =
+      "**Itinerary ID:**" +
+      ItId +
+      "\n\n" +
       "**Contact Info:**\n" +
       fullName +
       "\n" +
       email +
       "\n" +
       phoneNumber +
-      "\n\n" +
-      "**Generated Itinerary:**\n" +
-      response.text;
-    console.log(emailString);
-    await sendEmail(emailString);
+      "\n\n\n\n";
+
+    if (response.routeText !== "") {
+      emailString += "*Generated Route:**\n" + response.routeText + "\n\n\n\n";
+    }
+
+    emailString +=
+      "**Generated Itinerary:**\n" + removeExcel(response.text) + "\n\n\n\n";
+    emailString += "**Generated Sales Data:**\n" + response.sales_text;
+
+    await sendEmail(emailString, "Itinerary Generated");
 
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const [booked, setBooked] = useState<boolean>(false);
 
-  const handleEmailSend = async (itineraryString: string) => {
+  const handleEmailSend = async () => {
     setBooked(true);
-    await sendEmail(itineraryString);
+    let emailString = "";
+
+    emailString =
+      "**Itinerary ID:**" +
+      itineraryNumber +
+      "\n\n" +
+      "**Contact Info:**\n" +
+      fullName +
+      "\n" +
+      email +
+      "\n" +
+      phoneNumber +
+      "\n\n\n\n";
+
+    await sendEmail(emailString, "Trip Booked");
   };
 
   /**************************/
@@ -898,12 +938,15 @@ const Destinationform = ({
                       borderRadius: "5px", // Rounded corners
                       transition: "background-color 0.4s", // Smooth transition for hover effect
                     }}
-                    onClick={() => handleEmailSend(result)}
+                    onClick={() => handleEmailSend()}
                     disabled={booked}
                   >
                     {booked ? "Booked" : "Book Now"}
                   </Button>
                 </div>
+                {booked && (
+                  <p>Our Sales representative will contact you soon!</p>
+                )}
               </div>
               <div className="rightSide">
                 <GtpMaps lats={lats} longs={longs} names={attractions} />

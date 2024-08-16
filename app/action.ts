@@ -15,7 +15,10 @@ interface Response_Object {
   sales_text: string;
 }
 
-export async function generateItenary(formdata: FormData) {
+export async function generateItenary(
+  formdata: FormData,
+  itinerary_id: number
+) {
   const dest_id = formdata.get("Destinations");
   const start = formdata.get("trip-start");
   const end = formdata.get("trip-end");
@@ -26,6 +29,12 @@ export async function generateItenary(formdata: FormData) {
   const route_id = formdata.get("Route");
   const transport_means = formdata.get("transport");
   console.log(formdata);
+
+  await fs.writeFile(
+    "app/data/itineraryID.txt",
+    itinerary_id.toString(),
+    "utf8"
+  );
 
   let days = 1;
   if (
@@ -93,8 +102,6 @@ export async function generateItenary(formdata: FormData) {
       att_lats.push(row[5]);
       att_longs.push(row[6].slice(0, -1));
       att_images.push(row[7]);
-
-      // console.log([att_lats]);
     }
   }
 
@@ -143,7 +150,6 @@ export async function generateItenary(formdata: FormData) {
       res = "Sorry, weather data is not available for these dates";
     });
   const weather_text = res;
-  console.log(weather_text);
 
   /*********Open AI APi*******/
   const url = "https://api.openai.com/v1/chat/completions";
@@ -161,8 +167,6 @@ export async function generateItenary(formdata: FormData) {
     - *Hotel*: ${route_hotel}
     
      Please write recommendations, attractions to visit, activities to do, places to eat, and accommodations.donot  add alot of details. Do not seperate into different sections by days`;
-
-    console.log(routePrompt);
 
     const routebody = {
       model: "gpt-4o-mini",
@@ -194,7 +198,7 @@ export async function generateItenary(formdata: FormData) {
 
     route_text = res;
   }
-  console.log(route_text);
+
   /*******Itinerary Generation*******/
 
   const prompt_text = `Act as a trip advisor to make an itinerary. The itinerary should include an overview of the destination on top, daily details such as places to visit, dining options, and any other relevant activities or experiences. Each day's format should be: day X description: ..., Details: morning, Midday, Afternoon, evening. Do not add cost after each day.
@@ -223,8 +227,6 @@ export async function generateItenary(formdata: FormData) {
     Please provide a day-by-day itinerary with recommendations on places to visit, where to eat, and how to get around. donot mention the costs to the user.  Also, include the itinerary mentioning hours.
     donot mention any kind of cost detail to user. i dont want user to know any cost.
     The response should have seperate sections for overview, each day and one section for Excel format. Seperate each section with a line of "----------" 10 dashes. Do not include anything else`;
-
-  console.log(prompt_text);
 
   const body = {
     model: "gpt-4o-mini",
@@ -269,18 +271,19 @@ export async function generateItenary(formdata: FormData) {
     }
   });
   text_strings.push(mystring);
-  console.log(text_strings);
 
   /**************Sales Data*******/
-  const salesPrompt = `Create a detailed cost breakdown for the sales team. The breakdown should include all expenses such as accommodation, dining, transportation, attractions, miscellaneous, refreshments, guide, and driver costs for the selected package.
+  const salesPrompt = `Use the user Itinerary as assistant.
+  Create a detailed cost breakdown for the sales team in pkr. The breakdown should include all expenses such as accommodation, dining, transportation, attractions, miscellaneous, refreshments, guide, and driver costs for the selected package.
 
     - Destination: ${dest_name}
     - Time Period: ${days} days
     - Total People: ${adults} adults and ${children} children
     - Package: ${pack_name}
+    - Travel: ${transport_means} 
 
     Costs:
-    - Accommodation cost per night: {dest_accommodations['RentPerNight'].mean()}. 
+    - Accommodation cost per night 
     - Dining cost per meal
     - Transportation cost per day
     - Attraction total cost
@@ -293,6 +296,10 @@ export async function generateItenary(formdata: FormData) {
   const body3 = {
     model: "gpt-4o-mini",
     messages: [
+      {
+        role: "assistant",
+        content: res,
+      },
       {
         role: "user",
         content: salesPrompt,
