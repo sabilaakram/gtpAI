@@ -75,6 +75,9 @@ const NavBar: React.FC = () => {
           <Link href="https://guidetopakistan.pk/blog/">Blog</Link>
           <Link href="https://guidetopakistan.pk/contact-us/">Contact Us</Link>
           <Link href="https://guidetopakistan.pk/shop/">Shop</Link>
+          <Link href="https://itinerary.guidetopakistan.pk/">
+            Plan Your Next Trip
+          </Link>
         </div>
       </div>
     </nav>
