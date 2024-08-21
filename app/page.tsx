@@ -38,6 +38,11 @@ export default async function Home() {
     return row.split(",");
   });
 
+  const pickup_file = await fs.readFile("app/data/pickup.csv", "utf8");
+  const mypickups = pickup_file.split("\n").map((row: string): string[] => {
+    return row.split(",");
+  });
+
   return (
     <>
       <main
@@ -56,6 +61,7 @@ export default async function Home() {
           destinationData={mydestinations}
           packageData={mypackages}
           routeData={myroutes}
+          pickupData={mypickups}
         ></DestForm>
         <br></br>
       </main>

@@ -91,124 +91,26 @@ const getCurrentDate = () => {
   return `${year}-${month}-${day}`;
 };
 
-const pakistani_cities = [
-  "Karachi",
-  "Lahore",
-  "Faisalabad",
-  "Rawalpindi",
-  "Multan",
-  "Gujranwala",
-  "Peshawar",
-  "Quetta",
-  "Islamabad",
-  "Sialkot",
-  "Bahawalpur",
-  "Sargodha",
-  "Sukkur",
-  "Larkana",
-  "Sheikhupura",
-  "Jhang",
-  "Rahim Yar Khan",
-  "Gujrat",
-  "Kasur",
-  "Mardan",
-  "Mingaora",
-  "Okara",
-  "Nawabshah",
-  "Chiniot",
-  "Kotli",
-  "Khuzdar",
-  "Dera Ghazi Khan",
-  "Muzaffargarh",
-  "Sadiqabad",
-  "Mirpur Khas",
-  "Bannu",
-  "Turbat",
-  "Parachinar",
-  "Muridke",
-  "Chaman",
-  "Gwadar",
-  "Mandi Bahauddin",
-  "Attock",
-  "Bahawalnagar",
-  "Jhelum",
-  "Sahiwal",
-  "Khushab",
-  "Daska",
-  "Khanewal",
-  "Muzaffarabad",
-  "Abbotabad",
-  "Shikarpur",
-  "Kundian",
-  "Hafizabad",
-  "Kot Addu",
-  "Kohat",
-  "Jacobabad",
-  "Shahdadkot",
-  "Mansehra",
-  "Kamalia",
-  "Mianwali",
-  "Tando Allahyar",
-  "Vihari",
-  "Gojra",
-  "Tando Muhammad Khan",
-  "Khairpur",
-  "Dera Ismail Khan",
-  "Chishtian",
-  "Charsadda",
-  "Kāmra",
-  "Swabi",
-  "Nowshera",
-  "Jaranwala",
-  "Chakwal",
-  "Bhalwal",
-  "Haripur",
-  "Dadu",
-  "Pakpattan",
-  "Tando Jam",
-  "Layyah",
-  "Burewala",
-  "Dipalpur",
-  "Badin",
-  "Jamshoro",
-  "Kotri",
-  "Tando Adam",
-  "Hasilpur",
-  "Arifwala",
-  "Chichawatni",
-  "Samundri",
-  "Pasrur",
-  "Moro",
-  "Manawan",
-  "Sambrial",
-  "Chiniot",
-  "Raiwind",
-  "Kamoke",
-  "Kashmor",
-  "Ahmedpur East",
-  "Kot Mumin",
-];
-
 const countryCodes = [
   { code: "+1", country: "USA", nationalNumberLength: 10 },
   { code: "+44", country: "UK", nationalNumberLength: 10 },
-  { code: "+92", country: "Pakistan", nationalNumberLength: 10 },
-  { code: "+33", country: "France", nationalNumberLength: 9 },
-  { code: "+49", country: "Germany", nationalNumberLength: 11 },
-  { code: "+34", country: "Spain", nationalNumberLength: 9 },
-  { code: "+91", country: "India", nationalNumberLength: 10 },
-  { code: "+61", country: "Australia", nationalNumberLength: 9 },
-  { code: "+81", country: "Japan", nationalNumberLength: 10 },
-  { code: "+55", country: "Brazil", nationalNumberLength: 11 },
-  { code: "+27", country: "South Africa", nationalNumberLength: 10 },
-  { code: "+7", country: "Russia", nationalNumberLength: 10 },
-  { code: "+82", country: "South Korea", nationalNumberLength: 11 },
-  { code: "+46", country: "Sweden", nationalNumberLength: 9 },
-  { code: "+45", country: "Denmark", nationalNumberLength: 8 },
-  { code: "+31", country: "Netherlands", nationalNumberLength: 9 },
-  { code: "+41", country: "Switzerland", nationalNumberLength: 9 },
-  { code: "+20", country: "Egypt", nationalNumberLength: 10 },
-  { code: "+98", country: "Iran", nationalNumberLength: 11 },
+  { code: "+92", country: "PK", nationalNumberLength: 10 },
+  { code: "+33", country: "FR", nationalNumberLength: 9 },
+  { code: "+49", country: "DE", nationalNumberLength: 11 },
+  { code: "+34", country: "ES", nationalNumberLength: 9 },
+  { code: "+91", country: "IN", nationalNumberLength: 10 },
+  { code: "+61", country: "AU", nationalNumberLength: 9 },
+  { code: "+81", country: "JP", nationalNumberLength: 10 },
+  { code: "+55", country: "BR", nationalNumberLength: 11 },
+  { code: "+27", country: "ZA", nationalNumberLength: 10 },
+  { code: "+7", country: "RU", nationalNumberLength: 10 },
+  { code: "+82", country: "KR", nationalNumberLength: 11 },
+  { code: "+46", country: "SE", nationalNumberLength: 9 },
+  { code: "+45", country: "DK", nationalNumberLength: 8 },
+  { code: "+31", country: "NL", nationalNumberLength: 9 },
+  { code: "+41", country: "CH", nationalNumberLength: 9 },
+  { code: "+20", country: "EG", nationalNumberLength: 10 },
+  { code: "+98", country: "IR", nationalNumberLength: 11 },
   // Add more countries and codes as needed
 ];
 
@@ -216,10 +118,12 @@ const Destinationform = ({
   destinationData,
   packageData,
   routeData,
+  pickupData,
 }: {
   destinationData: string[][];
   packageData: string[][];
   routeData: string[][];
+  pickupData: string[][];
 }) => {
   const [result, setResult] = useState<string | null>(null);
   const [routeResponse, setRouteResponse] = useState<string>("");
@@ -462,6 +366,19 @@ const Destinationform = ({
     );
   };
   /*********************/
+  const [airport, setAirport] = useState<boolean>(false);
+
+  const handlePickupChange = (e: any) => {
+    setSelectedPickup(e.target.value);
+    if (
+      pickupData.find((item) => item[0] === e.target.value && item[1] === "1\r")
+    ) {
+      setAirport(true);
+    } else {
+      setAirport(false);
+      setSelectedTransport("car");
+    }
+  };
 
   return (
     <div>
@@ -506,14 +423,14 @@ const Destinationform = ({
                   border: "none",
                   outline: "none",
                   fontSize: "1rem",
-                  width: "75px",
+                  width: "95px",
                   padding: "0.5rem",
                   marginRight: "8px",
                 }}
               >
                 {countryCodes.map((item) => (
                   <option key={item.code} value={item.code}>
-                    {item.code}
+                    {item.country} {item.code}
                   </option>
                 ))}
               </select>
@@ -556,14 +473,14 @@ const Destinationform = ({
               name="Pickup"
               id="Pickup"
               value={selectedPickup}
-              onChange={(e) => setSelectedPickup(e.target.value)}
+              onChange={handlePickupChange}
               required
               className="select-field"
             >
               <option value="">Select your city</option>
-              {pakistani_cities.map((item) => (
-                <option key={item} value={item}>
-                  {item}
+              {pickupData.slice(1).map((item) => (
+                <option key={item[0]} value={item[0]}>
+                  {item[0]}
                 </option>
               ))}
             </select>
@@ -586,20 +503,22 @@ const Destinationform = ({
                   </label>
                 </div>
 
-                <div className="radio-item">
-                  <input
-                    type="radio"
-                    id="plane"
-                    name="transport"
-                    value="plane"
-                    checked={selectedTransport === "plane"}
-                    onChange={(e) => setSelectedTransport(e.target.value)}
-                    className="radio-input"
-                  />
-                  <label htmlFor="plane" className="radio-label">
-                    By Plane
-                  </label>
-                </div>
+                {airport && (
+                  <div className="radio-item">
+                    <input
+                      type="radio"
+                      id="plane"
+                      name="transport"
+                      value="plane"
+                      checked={selectedTransport === "plane"}
+                      onChange={(e) => setSelectedTransport(e.target.value)}
+                      className="radio-input"
+                    />
+                    <label htmlFor="plane" className="radio-label">
+                      By Plane
+                    </label>
+                  </div>
+                )}
               </div>
               <label
                 style={{
