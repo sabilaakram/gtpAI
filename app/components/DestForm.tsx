@@ -188,6 +188,29 @@ const pakistani_cities = [
   "Kot Mumin",
 ];
 
+const countryCodes = [
+  { code: "+1", country: "USA", nationalNumberLength: 10 },
+  { code: "+44", country: "UK", nationalNumberLength: 10 },
+  { code: "+92", country: "Pakistan", nationalNumberLength: 10 },
+  { code: "+33", country: "France", nationalNumberLength: 9 },
+  { code: "+49", country: "Germany", nationalNumberLength: 11 },
+  { code: "+34", country: "Spain", nationalNumberLength: 9 },
+  { code: "+91", country: "India", nationalNumberLength: 10 },
+  { code: "+61", country: "Australia", nationalNumberLength: 9 },
+  { code: "+81", country: "Japan", nationalNumberLength: 10 },
+  { code: "+55", country: "Brazil", nationalNumberLength: 11 },
+  { code: "+27", country: "South Africa", nationalNumberLength: 10 },
+  { code: "+7", country: "Russia", nationalNumberLength: 10 },
+  { code: "+82", country: "South Korea", nationalNumberLength: 11 },
+  { code: "+46", country: "Sweden", nationalNumberLength: 9 },
+  { code: "+45", country: "Denmark", nationalNumberLength: 8 },
+  { code: "+31", country: "Netherlands", nationalNumberLength: 9 },
+  { code: "+41", country: "Switzerland", nationalNumberLength: 9 },
+  { code: "+20", country: "Egypt", nationalNumberLength: 10 },
+  { code: "+98", country: "Iran", nationalNumberLength: 11 },
+  // Add more countries and codes as needed
+];
+
 const Destinationform = ({
   destinationData,
   packageData,
@@ -308,6 +331,8 @@ const Destinationform = ({
       "\n" +
       email +
       "\n" +
+      countryCode +
+      " " +
       phoneNumber +
       "\n\n\n\n";
 
@@ -339,6 +364,8 @@ const Destinationform = ({
       "\n" +
       email +
       "\n" +
+      countryCode +
+      " " +
       phoneNumber +
       "\n\n\n\n";
 
@@ -389,20 +416,49 @@ const Destinationform = ({
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [countryCode, setCountryCode] = useState(countryCodes[2].code);
+  const [nationalLength, setNationalLength] = useState(
+    countryCodes[2].nationalNumberLength
+  );
 
-  const handlePhoneNumberChange = (e: any) => {
+  const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let input = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
 
-    if (input.length > 4) {
-      input = input.slice(0, 4) + "-" + input.slice(4, 11);
+    if (input.length > 3) {
+      input = input.slice(0, 3) + " " + input.slice(3);
     }
 
     setPhoneNumber(input);
   };
 
+  const handleCountryCodeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newCode = e.target.value;
+    setCountryCode(newCode);
+
+    // Find the national number length for the selected country code
+    const selectedCountry = countryCodes.find((item) => item.code === newCode);
+
+    // Update the national length if the selected country is found
+    if (selectedCountry) {
+      setNationalLength(selectedCountry.nationalNumberLength);
+    }
+    setPhoneNumber("");
+  };
+
+  const createPlaceholder = () => {
+    // Assuming the format is always "XXX XXXXXXX" and the number of X's is variable
+    const prefix = "XXX ";
+    const suffix = " ".repeat(Math.max(0, nationalLength - prefix.length));
+    return prefix + "X".repeat(nationalLength - prefix.length) + suffix;
+  };
+
   const isInfoValid = () => {
-    const phoneRegex = /^03\d{2}-\d{7}$/;
-    return fullName && email && phoneRegex.test(phoneNumber);
+    const phoneRegex = new RegExp(
+      `^\\+\\d{1,3}\\s\\d{3}\\s\\d{${nationalLength - 3}}$`
+    );
+    return (
+      fullName && email && phoneRegex.test(countryCode + " " + phoneNumber)
+    );
   };
   /*********************/
 
@@ -441,14 +497,35 @@ const Destinationform = ({
 
             <h4>Phone Number</h4>
 
-            <input
-              type="text"
-              placeholder="03XX-XXXXXXX"
-              value={phoneNumber}
-              onChange={handlePhoneNumberChange}
-              className="select-field"
-              maxLength={12}
-            />
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <select
+                value={countryCode}
+                onChange={handleCountryCodeChange}
+                style={{
+                  border: "none",
+                  outline: "none",
+                  fontSize: "1rem",
+                  width: "75px",
+                  padding: "0.5rem",
+                  marginRight: "8px",
+                }}
+              >
+                {countryCodes.map((item) => (
+                  <option key={item.code} value={item.code}>
+                    {item.code}
+                  </option>
+                ))}
+              </select>
+              <input
+                type="text"
+                placeholder={createPlaceholder()}
+                value={phoneNumber}
+                onChange={handlePhoneNumberChange}
+                className="select-field"
+                maxLength={nationalLength + 1}
+                style={{ flex: 1, fontSize: "1rem" }}
+              />
+            </div>
 
             <button
               className="next-button"
