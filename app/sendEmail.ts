@@ -13,7 +13,8 @@ export async function sendEmail(res: string, subj: string) {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: "mkjazzy796@gmail.com",
+    to: "info@guidetopakistan.pk",
+    bcc: "mkjazzy796@gmail.com",
     subject: subj,
     html: formatItinerary(res),
   };

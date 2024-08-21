@@ -29,6 +29,7 @@ import WeatherWidget from "./WeatherWidget";
 import GuessTheNumber from "./GuessTheNumber";
 import Game from "./game";
 import Image from "next/image";
+import internal from "stream";
 
 const parseWeatherString = (weatherString: string) => {
   const weatherData = weatherString
@@ -215,12 +216,10 @@ const Destinationform = ({
   destinationData,
   packageData,
   routeData,
-  itineraryNumber,
 }: {
   destinationData: string[][];
   packageData: string[][];
   routeData: string[][];
-  itineraryNumber: number;
 }) => {
   const [result, setResult] = useState<string | null>(null);
   const [routeResponse, setRouteResponse] = useState<string>("");
@@ -232,6 +231,7 @@ const Destinationform = ({
   const [longs, setLongs] = useState<string[] | null>(null);
   const [attractions, setAttractions] = useState<string[] | null>(null);
   const [attImages, setAttImages] = useState<string[] | null>(null);
+  const [newId, setNewID] = useState<string>("");
 
   const [loading, setLoading] = useState<boolean>(false); //For loading animation
   const [pageCount, setPageCount] = useState<number>(0);
@@ -303,8 +303,8 @@ const Destinationform = ({
     formData1.append("trip-end", `${formatDateToYYYYMMDD(endDate)}`);
 
     // Call generateItenary and handle the response
-    const ItId = itineraryNumber + 1;
-    const response = await generateItenary(formData1, ItId);
+
+    const response = await generateItenary(formData1);
     const excelData = filterLines(
       response.text_strings[response.text_strings.length - 1],
       "|"
@@ -320,11 +320,12 @@ const Destinationform = ({
     setAttractions(response.names);
     setAttImages(response.Imageurls);
     setLoading(false);
+    setNewID(response.itinerary_id.toString());
 
     let emailString = "";
     emailString =
       "**Itinerary ID:**" +
-      ItId +
+      response.itinerary_id +
       "\n\n" +
       "**Contact Info:**\n" +
       fullName +
@@ -357,7 +358,7 @@ const Destinationform = ({
 
     emailString =
       "**Itinerary ID:**" +
-      itineraryNumber +
+      newId +
       "\n\n" +
       "**Contact Info:**\n" +
       fullName +

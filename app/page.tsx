@@ -56,7 +56,6 @@ export default async function Home() {
           destinationData={mydestinations}
           packageData={mypackages}
           routeData={myroutes}
-          itineraryNumber={itinerary_id}
         ></DestForm>
         <br></br>
       </main>

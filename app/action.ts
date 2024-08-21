@@ -13,12 +13,10 @@ interface Response_Object {
   Imageurls: string[];
   routeText: string;
   sales_text: string;
+  itinerary_id: number;
 }
 
-export async function generateItenary(
-  formdata: FormData,
-  itinerary_id: number
-) {
+export async function generateItenary(formdata: FormData) {
   const dest_id = formdata.get("Destinations");
   const start = formdata.get("trip-start");
   const end = formdata.get("trip-end");
@@ -30,9 +28,12 @@ export async function generateItenary(
   const transport_means = formdata.get("transport");
   console.log(formdata);
 
+  let itinerary_num =
+    parseInt(await fs.readFile("app/data/itineraryID.txt", "utf8")) + 1;
+
   await fs.writeFile(
     "app/data/itineraryID.txt",
-    itinerary_id.toString(),
+    itinerary_num.toString(),
     "utf8"
   );
 
@@ -337,6 +338,7 @@ export async function generateItenary(
     Imageurls: att_images,
     routeText: route_text,
     sales_text: salesText,
+    itinerary_id: itinerary_num,
   };
 
   return responseObject;
