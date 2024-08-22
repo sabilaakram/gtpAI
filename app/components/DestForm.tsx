@@ -371,7 +371,7 @@ const Destinationform = ({
   const handlePickupChange = (e: any) => {
     setSelectedPickup(e.target.value);
     if (
-      pickupData.find((item) => item[0] === e.target.value && item[1] === "1\r")
+      pickupData.find((item) => item[0] === e.target.value && item[1] === "1")
     ) {
       setAirport(true);
     } else {

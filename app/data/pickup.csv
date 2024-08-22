@@ -1,95 +1,95 @@
-City,Has_Airport
-Karachi,1
-Lahore,1
-Faisalabad,1
-Rawalpindi,1
-Multan,1
-Gujranwala,0
-Peshawar,1
-Quetta,1
-Islamabad,1
-Sialkot,1
-Bahawalpur,1
-Sargodha,0
-Sukkur,1
-Larkana,1
-Sheikhupura,0
-Jhang,0
-Rahim Yar Khan,1
-Gujrat,0
-Kasur,0
-Mardan,0
-Mingaora,0
-Okara,0
-Nawabshah,1
-Chiniot,0
-Kotli,0
-Khuzdar,0
-Dera Ghazi Khan,1
-Muzaffargarh,0
-Sadiqabad,0
-Mirpur Khas,0
-Bannu,1
-Turbat,1
-Parachinar,1
-Muridke,0
-Chaman,0
-Gwadar,1
-Mandi Bahauddin,0
-Attock,0
-Bahawalnagar,0
-Jhelum,0
-Sahiwal,0
-Khushab,0
-Daska,0
-Khanewal,0
-Muzaffarabad,0
-Abbotabad,0
-Shikarpur,0
-Kundian,0
-Hafizabad,0
-Kot Addu,0
-Kohat,1
-Jacobabad,1
-Shahdadkot,0
-Mansehra,0
-Kamalia,0
-Mianwali,1
-Tando Allahyar,0
-Vihari,0
-Gojra,0
-Tando Muhammad Khan,0
-Khairpur,0
-Dera Ismail Khan,1
-Chishtian,0
-Charsadda,0
-Kāmra,0
-Swabi,0
-Nowshera,0
-Jaranwala,0
-Chakwal,0
-Bhalwal,0
-Haripur,0
-Dadu,0
-Pakpattan,0
-Tando Jam,0
-Layyah,0
-Burewala,0
-Dipalpur,0
-Badin,0
-Jamshoro,0
-Kotri,0
-Tando Adam,0
-Hasilpur,0
-Arifwala,0
-Chichawatni,0
-Samundri,0
-Pasrur,0
-Moro,0
-Manawan,0
-Sambrial,0
-Raiwind,0
-Kamoke,0
-Kashmor,0
-Ahmedpur East,0
-Kot Mumin,0
+City,Has_Airport,Column3
+Karachi,1,x
+Lahore,1,x
+Faisalabad,1,x
+Rawalpindi,1,x
+Multan,1,x
+Gujranwala,0,x
+Peshawar,1,x
+Quetta,1,x
+Islamabad,1,x
+Sialkot,1,x
+Bahawalpur,1,x
+Sargodha,0,x
+Sukkur,1,x
+Larkana,1,x
+Sheikhupura,0,x
+Jhang,0,x
+Rahim Yar Khan,1,x
+Gujrat,0,x
+Kasur,0,x
+Mardan,0,x
+Mingaora,0,x
+Okara,0,x
+Nawabshah,1,x
+Chiniot,0,x
+Kotli,0,x
+Khuzdar,0,x
+Dera Ghazi Khan,1,x
+Muzaffargarh,0,x
+Sadiqabad,0,x
+Mirpur Khas,0,x
+Bannu,1,x
+Turbat,1,x
+Parachinar,1,x
+Muridke,0,x
+Chaman,0,x
+Gwadar,1,x
+Mandi Bahauddin,0,x
+Attock,0,x
+Bahawalnagar,0,x
+Jhelum,0,x
+Sahiwal,0,x
+Khushab,0,x
+Daska,0,x
+Khanewal,0,x
+Muzaffarabad,0,x
+Abbotabad,0,x
+Shikarpur,0,x
+Kundian,0,x
+Hafizabad,0,x
+Kot Addu,0,x
+Kohat,1,x
+Jacobabad,1,x
+Shahdadkot,0,x
+Mansehra,0,x
+Kamalia,0,x
+Mianwali,1,x
+Tando Allahyar,0,x
+Vihari,0,x
+Gojra,0,x
+Tando Muhammad Khan,0,x
+Khairpur,0,x
+Dera Ismail Khan,1,x
+Chishtian,0,x
+Charsadda,0,x
+Kāmra,0,x
+Swabi,0,x
+Nowshera,0,x
+Jaranwala,0,x
+Chakwal,0,x
+Bhalwal,0,x
+Haripur,0,x
+Dadu,0,x
+Pakpattan,0,x
+Tando Jam,0,x
+Layyah,0,x
+Burewala,0,x
+Dipalpur,0,x
+Badin,0,x
+Jamshoro,0,x
+Kotri,0,x
+Tando Adam,0,x
+Hasilpur,0,x
+Arifwala,0,x
+Chichawatni,0,x
+Samundri,0,x
+Pasrur,0,x
+Moro,0,x
+Manawan,0,x
+Sambrial,0,x
+Raiwind,0,x
+Kamoke,0,x
+Kashmor,0,x
+Ahmedpur East,0,x
+Kot Mumin,0,x
