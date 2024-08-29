@@ -274,6 +274,15 @@ const Destinationform = ({
       phoneNumber +
       "\n\n\n\n";
 
+    if (routeResponse !== "") {
+      emailString += "*Generated Route:**\n" + routeResponse + "\n\n\n\n";
+    }
+    if (result) {
+      emailString +=
+        "**Generated Itinerary:**\n" + removeExcel(result) + "\n\n\n\n";
+    }
+    emailString += "**Generated Sales Data:**\n" + salesResponse;
+
     await sendEmail(emailString, "Trip Booked");
   };
 
