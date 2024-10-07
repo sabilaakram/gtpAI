@@ -159,8 +159,8 @@ export async function generateItenary(formdata: FormData) {
   /***********Route Itinerary**********/
   let route_text = "";
   if (route_id !== "") {
-    const routePrompt = `You are an AI travel assistant. Based on the following details, create a road journey plan. it is only from the pickup to destination place:
-    - *Pickup Location*: ${pickup}
+    const routePrompt = `You are an AI travel assistant. Based on the following details, create a road journey plan from the Islamabad to destination place. Also include the travel time from the pickup ${pickup} to the destination, which is ${dest_name}. If the number of staying days (${days}) is less than the days required in traveling (${route_time}), give an excuse message like "Sorry, your staying days are not enough." However, if ${days} is greater than or equal to the days required in traveling, proceed with the further steps.
+    - *Pickup Location*: Islamabad
     - *Destination*: ${dest_name}
     - *Route*: ${route_name}
     - *Attractions*: ${route_attractions}
@@ -202,7 +202,14 @@ export async function generateItenary(formdata: FormData) {
 
   /*******Itinerary Generation*******/
 
-  const prompt_text = `Act as a trip advisor to make an itinerary. The itinerary should include an overview of the destination on top, daily details such as places to visit, dining options, and any other relevant activities or experiences. Each day's format should be: day X description: ..., Details: morning, Midday, Afternoon, evening. Do not add cost after each day.
+  const prompt_text = `Act as a trip advisor to make an itinerary. The itinerary should include an overview of the destination at the top, followed by detailed hour-by-hour events for each day of the trip. Start with the day when the journey begins from the pickup location and include details about the time needed for traveling and the route based on ${route_name}. Each activity or stop during the day should be scheduled with a specific time, following this format:
+
+08:00am - 08:30am: Pickup from Islamabad.
+08:30am - 09:30am: Travel on [route_name], with a stop at [place].
+09:30am - 10:30am: Visit [place] for breakfast.
+Include detailed times for all stops, activities, and meals throughout the day. In case of multi-day travel, include the number of days required to return to the original location. If the total number of staying days (${days}) is less than the travel time (${route_time}), give an excuse message: 'Sorry, your staying days are not enough' and do not proceed further with the itinerary details. and drop off at Islamabad on the last day, and after that the trip end.
+
+Each day's itinerary should list the hour-wise events clearly, making sure all stops, attractions, meals, and activities are listed without any cost details.
     Use the exact names of attractions as given below.
     At the end, make the whole itinerary in an Excel format. It should contain:
     - Day

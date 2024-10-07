@@ -793,10 +793,6 @@ const Destinationform = ({
             </Spinner>
             <p className="loading-text">Generating your itinerary...</p>
 
-            <div className="hidden md:block">
-              <p>Try this game while you wait</p>
-              <Game />
-            </div>
           </div>
         </div>
       )}
@@ -812,6 +808,15 @@ const Destinationform = ({
         pageCount === 4 && (
           <>
             <h2 className="header">Here&apos;s Your Itinerary!</h2>
+            <p
+  style={{
+    fontStyle: "italic",
+    color: "#999",
+    textAlign: "center",
+  }}
+>
+  This itinerary is AI generated, and the real experience may vary from this.
+</p>
             <br></br>
             <div className="mainContainer">
               <br></br>
